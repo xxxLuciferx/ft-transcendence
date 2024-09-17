@@ -30,6 +30,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+
+#ft_transcendence {
+    font-size: 3em;
+    margin-top: -20px; 
+    text-align: center; 
+}
+
 .logo img {
     width: 80px;
     height: 80px;
@@ -67,6 +74,54 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: white;
+    color: rgb(245, 233, 11);
     margin: 0;
-}
+} 
+  /* box ------------------------------------------------------ */
+  
+  #box {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute; /* Positioning the element */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+  }
+  
+  
+  /* flashlight ------------------------------------------------------ */
+  
+  #flashlight {
+    color: hsla(0,0%,0%,0);
+    perspective: 20px;
+    outline: none;
+  }
+  
+  
+  /* flash ------------------------------------------------------ */
+  
+  #flash {
+    display: inline-block;
+    text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,0,0.8) 0 30px 25px;
+    transition: margin-left 0.3s cubic-bezier(0, 1, 0, 1);
+  }
+      
+  #box:hover #flash {
+     text-shadow: #111 0 0 1px, rgba(255,255,255,0.1) 0 1px 3px;
+    margin-left: 20px;
+    transition: margin-left 1s cubic-bezier(0, 0.75, 0, 1);
+  }
+  
+  
+  /* light ------------------------------------------------------ */
+  
+  #light {
+    display: inline-block;
+    text-shadow: #111 0 0 1px, rgba(255,255,255,0.1) 0 1px 3px;
+  }
+  
+  #box:hover #light {
+    text-shadow: #fff 0 0 4px, #fcffbb 0 0 20px;
+    transform: rotateY(-60deg);
+    transition:         transform 0.3s cubic-bezier(0, 0.75, 0, 1), text-shadow 0.1s ease-out;
+  }
