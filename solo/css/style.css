@@ -1,0 +1,66 @@
+.main{
+    position: fixed;
+    z-index: 9999999;
+    background: rgb(128, 31, 188)929;
+    width: 100%;
+    height: 100%;
+    color: blue;
+}
+
+
+/* .loader_bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+} */
+
+.loader {
+    position: absolute;
+    z-index: 999999;
+    left: 50%;
+    top: 50%;
+    /* background-color: #ae0d0d; */
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidepanel {
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #e90102;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidepanel a.active {
+    color: #000;
+}
+
+.sidepanel a:hover {
+    color: #000;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}

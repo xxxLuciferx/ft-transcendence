@@ -21,7 +21,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- <link rel="icon" href="images/fevicon.png" type="image/gif" /> -->
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
@@ -38,10 +38,10 @@
       <div id="mySidepanel" class="sidepanel">
          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
          <a class="active" href="index.html">Home</a>
-         <a href="about.html">About</a>
+         <!-- <a href="about.html">About</a>
          <a href="classes.html">Classes</a>
          <a href="testimonials.html">Testimonials</a>
-         <a href="contact.html">Contact</a>
+         <a href="contact.html">Contact</a> -->
       </div>
       <!-- header -->
       <header>
@@ -71,7 +71,7 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- banner -->
-      <section class="banner_main">
+      <!-- <section class="banner_main">
          <div id="banner1" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                <li data-target="#banner1" data-slide-to="0" class="active"></li>
@@ -131,7 +131,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> -->
             <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
@@ -142,7 +142,7 @@
       </section>
       <!-- end banner -->
       <!-- about section -->
-      <div id="about" class="about afbecros">
+      <!-- <div id="about" class="about afbecros">
          <div class="container">
             <div class="row ">
                <div class="col-md-12">
@@ -155,10 +155,10 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- about section -->
       <!-- classes section -->
-      <div class="classes afbecros">
+      <!-- <div class="classes afbecros">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -193,16 +193,16 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
       <!-- classes section -->
       <!-- testimonial section -->
-      <div id="testimonial" class="testimonial afbecros">
+      <!-- <div id="testimonial" class="testimonial afbecros">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Testimonials</h2>
+                     <h2>Khalil Haimer</h2>
                   </div>
                </div>
             </div>
@@ -221,8 +221,8 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="testimonial_box">
-                                          <h3>markden</h3>
-                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                                          <h3>Front Page</h3>
+                                          <p>Users can login using the OAuth system of the school's intranet and enable two-factor authentication as well as add friends, see stats of the games they played, invite other users to join a game, etc. In addition to that, users can send each other direct messages and create chat rooms. Finally, they can play the mighty Pong game against each other or watch other players busy playing.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -268,10 +268,10 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- end testimonial section -->
       <!-- contact section -->
-      <div id="contact" class="contact afbecros">
+      <!-- <div id="contact" class="contact afbecros">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -304,11 +304,11 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <!-- end contact section -->
       <!--  footer -->
       <footer>
-         <div class="footer">
+         <!-- <div class="footer">
             <div class="container">
                <div class="row">
                   <div class="col-md-8 offset-md-2">
@@ -337,7 +337,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div> -->
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
@@ -349,10 +349,6 @@
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <script>
-
-
-
-
          function openNav() {
            document.getElementById("mySidepanel").style.width = "250px";
          }
@@ -360,21 +356,19 @@
          function closeNav() {
            document.getElementById("mySidepanel").style.width = "0";
          }
-
-         window.addEventListener('DOMContentLoaded', (event) => {
-             const contentDiv = document.getElementById('content');
-             const links = document.querySelectorAll('a[data-href]');
+         // window.addEventListener('DOMContentLoaded', (event) => {
+         //     const contentDiv = document.getElementById('content');
+         //     const links = document.querySelectorAll('a[data-href]');
       
-             links.forEach(link => {
-                 link.addEventListene('click', function(e) {
-                     e.preventDefault();
-                     fetch(this.dataset.href)
-                         .then(response => response.text())
-                         .then(html => contentDiv.innerHTML = html);
-                 });
-             });
-         });
-
+         //     links.forEach(link => {
+         //         link.addEventListene('click', function(e) {
+         //             e.preventDefault();
+         //             fetch(this.dataset.href)
+         //                 .then(response => response.text())
+         //                 .then(html => contentDiv.innerHTML = html);
+         //         });
+         //     });
+         // });
       </script>
    </body>
 </html>
