@@ -7,25 +7,42 @@
     color: blue;
 }
 
-
-/* .loader_bg {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-} */
-
 .loader {
-    position: fixed;
+    position: center;
     z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(0, 0, 0, 0.8); */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
+
 .hidden {
     display: none;
 }
+
+.header {
+    width: 100%;
+    padding: 20px 20px;
+    background: transparent;
+    position: absolute;
+    z-index: 999;
+}
+
+.logo {
+    padding-top: 4px;
+}
+
+.right_bottun {
+    float: right;
+}
+
+/* .banner_main {
+    background: url(../images/banner.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 744px;
+} */
