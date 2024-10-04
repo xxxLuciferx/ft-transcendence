@@ -1,40 +1,36 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     const loader = document.querySelector('.loader');
-//     const contentDiv = document.getElementById('content');
-//     const links = document.querySelectorAll('nav a');
+// Wait for the document to fully load
+document.addEventListener("DOMContentLoaded", function () {
 
-//     // Function to load the page content
-//     function loadPage(page) {
-//         loader.style.display = 'block'; // Show loader
+    // Select the sign-in button
+    const signinBtn = document.getElementById('signinBtn');
 
-//         // Simulate loading time
-//         setTimeout(() => {
-//             fetch(`${page}.html`)
-//                 .then(response => {
-//                     if (!response.ok) throw new Error('Page not found');
-//                     return response.text();
-//                 })
-//                 .then(html => {
-//                     contentDiv.innerHTML = html; // Load content into div
-//                     loader.style.display = 'none'; // Hide loader
-//                     window.history.pushState({ page }, '', `${page}.html`); // Change URL
-//                 })
-//                 .catch(error => {
-//                     contentDiv.innerHTML = '<p>Error loading page</p>';
-//                     loader.style.display = 'none'; // Hide loader
-//                 });
-//         }, 2000); // Change this to your desired loading time
-//     }
+    // Add click event to Button 1 to load the sign-in page
+    signinBtn.addEventListener('click', function () {
+        loadPage('signin.html', 'signin.html', 'signin.html');
+    });
 
-//     // Event listener for links
-//     links.forEach(link => {
-//         link.addEventListener('click', (event) => {
-//             event.preventDefault();
-//             const page = link.getAttribute('data-page');
-//             loadPage(page);
-//         });
-//     });
+    // Function to load a page into the content div and change the URL
+    function loadPage(page, pageTitle, pageUrl) {
+        const contentDiv = document.getElementById('content');
+        fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                contentDiv.innerHTML = html;
+                // Change the page title
+                document.title = pageTitle;
+                // Change the URL without reloading the page
+                window.history.pushState({html: html, pageTitle: pageTitle}, "", pageUrl);
+            })
+            .catch(err => {
+                contentDiv.innerHTML = "<p>Error loading the page.</p>";
+            });
+    }
 
-//     // Load home page by default
-//     loadPage('home');
-// });
+    // Handle back/forward navigation (when the user clicks the browser’s back/forward buttons)
+    window.onpopstate = function(event) {
+        if (event.state) {
+            document.getElementById('content').innerHTML = event.state.html;
+            document.title = event.state.pageTitle;
+        }
+    };
+});

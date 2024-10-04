@@ -1,120 +1,254 @@
-.main{
-    position: fixed;
-    z-index: 9999999;
-    background: rgb(128, 31, 188)929;
-    width: 100%;
-    height: 100%;
-    color: blue;
+/* Main container styles */
+.main {
+  position: fixed;
+  z-index: 9999999;
+  background: rgb(128, 31, 188); /* Removed extra numbers */
+  width: 100%;
+  height: 100%;
+  color: blue;
 }
 
+/* Loader overlay (currently hidden) */
 .loader {
-    position: center;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.8); */
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  display: none; /* Loader is hidden, no need for .hidden class */
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
-.hidden {
-    display: none;
-}
-
+/* Header styles */
 .header {
-    width: 100%;
-    padding: 20px 20px;
-    background: transparent;
-    position: absolute;
-    z-index: 999;
+  width: 100%;
+  padding: 20px 20px;
+  background: transparent;
+  position: absolute;
+  z-index: 999;
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Aligns logo and buttons */
+  align-items: center;
 }
 
+/* Logo section */
 .logo {
-    padding-top: 1px;
+  padding-top: 1px;
 }
 
-.right_bottun {
-    float: right;
-}
-
-/* .banner_main {
-    background: url(../images/banner.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    min-height: 744px;
-} */
-
+/* Button container */
 .right_bottun {
   display: flex;
-  gap: 30px; /* Optional: Adds space between the buttons */
+  gap: 30px; /* Adds space between the buttons */
 }
 
-
-
-/* <!-----------------> */
-/* From Uiverse.io by abrahamcalsin */ 
+/* Button styles */
 button {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: #183153;
-    font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+}
+
+/* Button hover effect: Expanding yellow background */
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+/* Button text styling */
+button span {
+  text-align: center;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover text color change */
+button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* Button hover animation for text */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
   }
-  
-  button:after {
-    content: " ";
-    width: 0%;
-    height: 100%;
-    background: #ffd401;
-    position: absolute;
-    transition: all 0.4s ease-in-out;
-    right: 0;
+  50% {
+    transform: scale(0.95);
   }
-  
-  button:hover::after {
-    right: auto;
-    left: 0;
-    width: 100%;
+  100% {
+    transform: scale(1);
   }
-  
-  button span {
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    padding: 18px 25px;
-    color: #fff;
-    font-size: 1.125em;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    z-index: 20;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  button:hover span {
-    color: #183153;
-    animation: scaleUp 0.3s ease-in-out;
-  }
-  
-  @keyframes scaleUp {
-    0% {
-      transform: scale(1);
-    }
-  
-    50% {
-      transform: scale(0.95);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
-  
+}
+
+/* Resetting default padding and margins for all elements */
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Setting the background color for the body */
+body {
+  background-color: #080710; /* Dark background */
+}
+
+/* Container for the background shapes */
+.background {
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+/* Style for the shapes used in the background */
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%; /* Circular shapes */
+}
+
+/* First background shape with gradient */
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: -80px;
+  top: -80px;
+}
+
+/* Second background shape with gradient */
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -30px;
+  bottom: -80px;
+}
+
+/* Styling the form container */
+form {
+  height: 520px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13); /* Semi-transparent background */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px; /* Padding inside the form */
+}
+
+/* General styles for form elements */
+form * {
+  font-family: 'Poppins', sans-serif; /* Font family */
+  color: #ffffff; /* Text color */
+  letter-spacing: 0.5px;
+  outline: none; /* Remove outline */
+  border: none; /* Remove border */
+}
+
+/* Title styling */
+form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center; /* Centered title */
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-top: 30px; /* Space above each label */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Input fields styling */
+input {
+  display: block;
+  height: 50px;
+  width: 100%; /* Full width */
+  background-color: rgba(255, 255, 255, 0.07); /* Light semi-transparent background */
+  border-radius: 3px;
+  padding: 0 10px; /* Padding inside inputs */
+  margin-top: 8px; /* Space above inputs */
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #e5e5e5; /* Placeholder text color */
+}
+
+/* Button styling */
+button {
+  margin-top: 50px; /* Space above button */
+  width: 100%; /* Full width */
+  background-color: #ffffff; /* White background */
+  color: #080710; /* Dark text color */
+  padding: 15px 0; /* Padding inside button */
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Social media buttons container */
+.social {
+  margin-top: 30px; /* Space above social buttons */
+  display: flex; /* Flexbox layout */
+}
+
+/* Individual social media button styling */
+.social div {
+  background-color: rgba(255, 255, 255, 0.27); /* Semi-transparent background */
+  width: 150px; /* Fixed width */
+  border-radius: 3px; /* Rounded corners */
+  padding: 5px 10px 10px 5px; /* Padding inside social buttons */
+  color: #eaf0fb; /* Text color */
+  text-align: center; /* Centered text */
+}
+
+/* Hover effect for social buttons */
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47); /* Lighter background on hover */
+}
+
+/* Specific margin for Facebook button */
+.social .fb {
+  margin-left: 25px; /* Space between buttons */
+}
+
+/* Icon styling within social buttons */
+.social i {
+  margin-right: 4px; /* Space between icon and text */
+}
