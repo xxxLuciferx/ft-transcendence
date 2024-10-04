@@ -47,6 +47,12 @@
     min-height: 744px;
 } */
 
+.right_bottun {
+  display: flex;
+  gap: 30px; /* Optional: Adds space between the buttons */
+}
+
+
 
 /* <!-----------------> */
 /* From Uiverse.io by abrahamcalsin */ 
