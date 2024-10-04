@@ -1,0 +1,115 @@
+/* Main container styles */
+.main {
+  position: fixed;
+  z-index: 9999999;
+  background: rgb(128, 31, 188); /* Background color */
+  width: 100%;
+  height: 100%;
+  color: blue;
+}
+
+/* Loader overlay (currently hidden) */
+.loader {
+  display: none; /* Loader is hidden */
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/* Header styles */
+.header {
+  width: 100%;
+  padding: 20px 20px;
+  background: transparent;
+  position: absolute;
+  z-index: 999;
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Aligns logo and buttons */
+  align-items: center;
+}
+
+/* Logo section */
+.logo {
+  padding-top: 1px;
+}
+
+/* Button container */
+.right_button {
+  display: flex;
+  gap: 30px; /* Adds space between the buttons */
+}
+
+/* Button styles */
+button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #ffffff;
+  font-family: "Montserrat", sans-serif; /* Font family */
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  padding: 10px 15px; /* Adjusted padding for smaller button */
+  font-size: 14px; /* Smaller font size */
+}
+
+/* Button hover effect */
+button:hover {
+  background: #e0e0e0; /* Lighter gray background on hover */
+  transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Button hover effect: Expanding yellow background */
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+/* Button text styling */
+button span {
+  text-align: center;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover text color change */
+button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* Button hover animation for text */
+@keyframes scaleUp {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1);
+  }
+}

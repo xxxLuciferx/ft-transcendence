@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event to Button 1 to load the sign-in page
     signinBtn.addEventListener('click', function () {
-        loadPage('signin.html', 'signin.html', 'signin.html');
+        loadPage('login.html', 'login.html', 'login.html');
     });
 
     // Function to load a page into the content div and change the URL
