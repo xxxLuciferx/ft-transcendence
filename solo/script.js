@@ -2,10 +2,12 @@
 window.addEventListener('DOMContentLoaded', function() {
     const contentDiv = document.getElementById('content');
     const loginBtn = document.getElementById('loginBtn');
+    const signinBtn = document.getElementById('signinBtn');
+    const video = document.getElementById("background-video");
 
     // Function to load a page into the content div
     function loadPage(page) {
-        fetch(page)
+        fetch(`${page}.html`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -14,14 +16,21 @@ window.addEventListener('DOMContentLoaded', function() {
             })
             .then(html => {
                 contentDiv.innerHTML = html;
+
+                // Control the background video display
+                if (page === 'login') {
+                    video.style.display = "block"; // Show the video for the login page
+                } else {
+                    video.style.display = "none"; // Hide the video for other pages
+                }
             })
             .catch(error => {
                 console.error('There was an error loading the page:', error);
-                contentDiv.innerHTML = "<p>Error loading the page.</p>";
+                contentDiv.innerHTML = `<p>Error loading the ${page} page.</p>`;
             });
     }
 
-    // Handle SPA routing with URL change and page loading
+    // Function to handle SPA routing with URL change and page loading
     function navigateTo(url, page) {
         history.pushState({}, '', url); // Change the URL
         loadPage(page); // Load the page content
@@ -30,21 +39,30 @@ window.addEventListener('DOMContentLoaded', function() {
     // Event listener for login button click
     loginBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        navigateTo('/login.html', 'login.html'); // Navigate to the login page
+        navigateTo('/login', 'login'); // Navigate to the login page
+    });
+
+    // Event listener for signin button click
+    signinBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        navigateTo('/signin', 'signin'); // Navigate to the signin page
     });
 
     // Handle back/forward button navigation
     window.onpopstate = function() {
         if (location.pathname === '/login') {
-            loadPage('login.html');
+            loadPage('login');
+        } else if (location.pathname === '/signin') {
+            loadPage('signin');
         } else {
-            loadPage('index.html');
+            // Default action: load the home page without background video
+            contentDiv.innerHTML = ''; // Clear content
+            video.style.display = "none"; // Ensure video is hidden by default
         }
     };
-});
 
-document.getElementById("loginBtn").addEventListener("click", function() {
-    const video = document.getElementById("background-video");
-    video.style.display = "none"; // Hides the video
+    // Optionally load the login page by default on first load
+    if (location.pathname === '/login') {
+        loadPage('login');
+    }
 });
-
