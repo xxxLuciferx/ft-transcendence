@@ -3,42 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration M3ana</title>
     <link rel="stylesheet" href="css/signin.css">
-    <title>Registration Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-    <div class="login-form">
-        <div class="logo"><img src="images/ppd.png" alt="logo"></div>
-        <form action="">
-            <div class="textbox">
-                <input type="text" placeholder="Full Name" id="name">
-                <span class="check-message hidden">Required</span>
-            </div>
-            <div class="textbox">
-                <input type="text" placeholder="Username" id="name">
-                <span class="check-message hidden">Required</span>
-            </div>
-            <div class="textbox">
-                <input type="text" placeholder="Email Address" id="username">
-                <span class="check-message hidden">Required</span>
-            </div>
-
-            <div class="textbox">
-                <input type="password" name="password" placeholder="Password" id="password">
-                <span class="check-message hidden">Required</span>
-            </div>
-
-            <div class="textbox">
-                <input type="password" name="retype-password" placeholder="Retype Password" id="retype-password">
-                <span class="check-message hidden">Required</span>
-            </div>
-            <input type="submit" value="Sign Up Now" class="login-btn" disabled>
-        </form>
-        <div class="dont-have-account">
-            Already have an account? 
-            <a href="">Log In</a>
+    <div class="container_sign">
+        <div class="form_area">
+            <p class="title">SIGN UP NOW!</p>
+            <form action="">
+                <div class="form_group">
+                    <label class="sub_title" for="name">Full Name</label>
+                    <input placeholder="Enter your full name" class="form_style" type="text" id="name">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="username">Username</label>
+                    <input placeholder="Enter your username" class="form_style" type="text" id="username">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="email">Email</label>
+                    <input placeholder="Enter your email" id="email" class="form_style" type="email">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="password">Password</label>
+                    <input placeholder="Enter your password" id="password" class="form_style" type="password">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="re-password">Re-Password</label>
+                    <input placeholder="Re-Enter your password" id="re-password" class="form_style" type="password">
+                </div>
+                <button class="btn">SIGN UP</button>
+            </form>
+        </div>
+        <div class="image_area">
+            <img src="images/ima.png" alt="Floating image" class="floating-image">
         </div>
     </div>
 </body>
