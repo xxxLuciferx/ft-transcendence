@@ -42,3 +42,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
+document.getElementById("loginBtn").addEventListener("click", function() {
+    const video = document.getElementById("background-video");
+    video.style.display = "none"; // Hides the video
+});
+

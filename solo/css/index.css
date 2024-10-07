@@ -76,3 +76,25 @@
   width: 115%;
   height: 115%;
 }
+
+/* Ensures video covers the entire background */
+/* #background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 80%;
+  min-height: 80%;
+  z-index: -1;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+} */
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  /* Ensures the video takes the full width */
+  height: 100%; /* Ensures the video takes the full height */
+  z-index: -1;  /* Keeps the video behind other elements */
+  object-fit: cover;  /* Ensures the video covers the entire background without distortion */
+}
