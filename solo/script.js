@@ -39,21 +39,21 @@ window.addEventListener('DOMContentLoaded', function() {
     // Event listener for login button click
     loginBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        navigateTo('/login', 'login'); // Navigate to the login page
+        navigateTo('/login.html', 'login'); // Navigate to the login page
     });
 
     // Event listener for signin button click
     signinBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        navigateTo('/signin', 'signin'); // Navigate to the signin page
+        navigateTo('/signup.html', 'signup'); // Navigate to the signin page
     });
 
     // Handle back/forward button navigation
     window.onpopstate = function() {
         if (location.pathname === '/login') {
             loadPage('login');
-        } else if (location.pathname === '/signin') {
-            loadPage('signin');
+        } else if (location.pathname === '/signup') {
+            loadPage('signup');
         } else {
             // Default action: load the home page without background video
             contentDiv.innerHTML = ''; // Clear content
@@ -66,3 +66,5 @@ window.addEventListener('DOMContentLoaded', function() {
         loadPage('login');
     }
 });
+
+

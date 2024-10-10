@@ -1,34 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BISSMILLAH</title>
-    <link rel="stylesheet" href="css/index.css"> <!-- Link to the index CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-    <div class="header d-flex justify-content-between align-items-center">
-        <div class="logo">
-            <a href="index.html"><img src="images/ppd.png" alt="#" /></a>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BISSMILLAH</title>
+        <link rel="stylesheet" href="css/index.css"> <!-- Link to the index CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+        <!-- <script src="js/signup.js" defer></script> -->
+        <div class="header d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="index.html"><img src="images/ppd.png" alt="#" /></a>
+            </div>
+            <div>
+                <!-- SPA Buttons -->
+                <button id="loginBtn" class="bn29" data-page="login">Login</button>
+                <button id="signinBtn" class="bn29" data-page="signin">Sign Up</button>
+            </div>
         </div>
-        <div>
-            <!-- SPA Buttons -->
-            <button id="loginBtn" class="bn29" data-page="login">Login</button>
-            <button id="signinBtn" class="bn29" data-page="signin">Sign In</button>
-        </div>
-    </div>
-</head>
+    </head>
 
-<body class="main">
-    <!-- Video background -->
-    <video autoplay muted loop id="background-video">
-        <source src="images/3allah.mp4" type="video/mp4">
-    </video>
+    <body class="main">
+        <!-- Video background -->
+        <!-- <div class="loader"></div> -->
+        <video autoplay muted loop id="background-video">
+            <source src="images/3allah.mp4" type="video/mp4">
+        </video>
 
-    <header>
-    </header>
+        <header>
+        </header>
 
-    <!-- Content section where pages will load -->
-    <div id="content"></div>
-</body> 
-</html> 
+        <!-- Content section where pages will load -->
+        <div id="content"></div>
+    </body> 
+    </html> 
