@@ -39,13 +39,13 @@ window.addEventListener('DOMContentLoaded', function() {
     // Event listener for login button click
     loginBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        navigateTo('/login.html', 'login'); // Navigate to the login page
+        navigateTo('/solo/login.html', 'login'); // Navigate to the login page
     });
 
     // Event listener for signin button click
     signinBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        navigateTo('/signup.html', 'signup'); // Navigate to the signin page
+        navigateTo('/solo/signup.html', 'signup'); // Navigate to the signin page
     });
 
     // Handle back/forward button navigation

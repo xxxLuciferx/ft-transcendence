@@ -1,12 +1,12 @@
-/* Base styles from login.css */
-body {
-    /* font-family: 'Poppins', sans-serif; */
-    margin: 0;
-    padding: 0;
-    display: top;
-    justify-content: center;
+.header {
+    width: 100%;
+    padding: 20px 20px;
+    background: transparent;
+    position: absolute;
+    z-index: 999;
+    display: flex; 
+    justify-content: space-between; 
     align-items: center;
-    min-height: 100vh;
 }
 
 /* SVG background styling */
@@ -21,6 +21,8 @@ svg {
 
 /* Form styling */
 form {
+    margin: auto;
+    margin-top: 15%;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
